@@ -1,0 +1,13 @@
+# Ignora todos los archivos de output
+**/app
+*.o
+*.exe
+*.out
+*.obj
+*.elf
+*.app
+*.a
+*.i*86
+*.x86_64
+*.hex
+
