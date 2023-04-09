@@ -12,9 +12,7 @@ int main (void){
 	assert(alternate_sum_4_using_c(8,2,5,1) == 10);
 	assert(alternate_sum_4_simplified(8,2,5,1) == 10);
 	assert(alternate_sum_8(8,2,5,1,8,2,5,1) == 20);
-	uint32_t result = -1;
-	product_2_f(&result, 2, 4.0);
-	assert(result == 8);
+	printf("%d", product_2_test(916, 849.89));
 	return 0;    
 }
 

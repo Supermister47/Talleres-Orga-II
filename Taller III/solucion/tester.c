@@ -68,9 +68,30 @@ TEST(test_product_2_f) {
 		shuffle(1000);
 		sprintf(assert_name, "alternate_sum_8(&result, %u, %.2f)", x[0], f[0]);
 
+		printf("------------\n");
+		printf("Iteracion %i\n", i);
+		printf("x[0]: %u; f[0]: %.2f\n", x[0], f[0]);
+
 		uint32_t result = -1;
 		product_2_f(&result, x[0], f[0]);
+		printf("result: %u; EXPECTED: %u\n",  result, (uint32_t)(x[0]*f[0]));
 		TEST_ASSERT_EQUALS(uint32_t, x[0]*f[0], result);
+	}
+}
+
+
+TEST(test_product_2_test) {
+	for (int i = 0; i < 100; i++) {
+		shuffle(1000);
+		sprintf(assert_name, "test_product_2_f(%u, %.2f)", x[0], f[0]);
+		printf("------------\n");
+		printf("Iteracion %i\n", i);
+		printf("x[0]: %u; f[0]: %.2f\n", x[0], f[0]);
+		
+		uint32_t result = -1;
+		
+		TEST_ASSERT_EQUALS(uint32_t, x[0]*f[0], product_2_test(x[0], f[0]));
+		printf("result: %u\n", result);
 	}
 }
 

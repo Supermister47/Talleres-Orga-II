@@ -12,6 +12,7 @@ global alternate_sum_4
 global alternate_sum_4_simplified
 global alternate_sum_8
 global product_2_f
+global product_2_test
 global alternate_sum_4_using_c
 
 ;########### DEFINICION DE FUNCIONES
@@ -108,14 +109,32 @@ product_2_f:
 	push rbp 
 	mov rbp,rsp
 	
-	vcvtusi2ss xmm1, xmm1, rsi
+	pxor xmm1, xmm1
+	cvtsi2ss xmm1, rsi
 
-	mulps xmm1, xmm0
-	vcvttss2usi rsi, xmm1
+	mulss xmm1, xmm0
+	cvttss2si rsi, xmm1
 	mov [rdi], rsi
+
+	;vcvttss2usi rsi, xmm1
+	;mov [rdi], rsi
+	
 
 
 
 	pop rbp
 	ret
 
+product_2_test:
+	push rbp 
+	mov rbp,rsp
+	
+	pxor xmm1, xmm1
+	cvtsi2ss xmm1, rdi
+
+	mulss xmm1, xmm0
+	; cvttss2si rdi, xmm0
+	cvttss2si rax, xmm1
+
+	pop rbp
+	ret

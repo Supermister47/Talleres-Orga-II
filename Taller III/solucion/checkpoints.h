@@ -63,6 +63,8 @@ uint32_t alternate_sum_8(uint32_t x1, uint32_t x2, uint32_t x3, uint32_t x4, uin
 // Hace la multiplicación x1 * f1 y el resultado se almacena en destination. Los dígitos decimales del resultado se eliminan mediante truncado.
 void product_2_f(uint32_t * destination, uint32_t x1, float f1);
 
+uint32_t product_2_test(uint32_t x1, float f1);
+
 //****************************************
 //Declaración de funciones de checkpoint 3
 //****************************************
